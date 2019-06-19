@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\build\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,7 +27,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\build\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -49,123 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ColorPreviewBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="EventsListBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extensions\AdobeColorTablePaletteSerializer.cs" />
-    <Compile Include="Extensions\AdobePhotoshopColorSwatchColorSpace.cs" />
-    <Compile Include="Extensions\AdobePhotoshopColorSwatchFileVersion.cs" />
-    <Compile Include="Extensions\AdobePhotoShopColorSwatchSerializer.cs" />
-    <Compile Include="Extensions\ColorBarStyle.cs" />
-    <Compile Include="Extensions\ColorCellBorderStyle.cs" />
-    <Compile Include="Extensions\ColorCollection.cs" />
-    <Compile Include="Extensions\ColorCollectionEventArgs.cs" />
-    <Compile Include="Extensions\ColorCollectionSortOrder.cs" />
-    <Compile Include="Extensions\ColorComparer.cs" />
-    <Compile Include="Extensions\ColorEditingMode.cs" />
-    <Compile Include="Extensions\ColorEditor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Extensions\ColorEditor.Designer.cs">
-      <DependentUpon>ColorEditor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Extensions\ColorEditorManager.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extensions\ColorGrid.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extensions\ColorGridSelectedCellStyle.cs" />
-    <Compile Include="Extensions\ColorHitTestInfo.cs" />
-    <Compile Include="Extensions\ColorPalette.cs" />
-    <Compile Include="Extensions\ColorPalettes.cs" />
-    <Compile Include="Extensions\ColorPickerDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Extensions\ColorPickerDialog.Designer.cs">
-      <DependentUpon>ColorPickerDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Extensions\ColorSlider.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extensions\ColorSliderNubStyle.cs" />
-    <Compile Include="Extensions\ColorSource.cs" />
-    <Compile Include="Extensions\ColorWheel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extensions\EditColorCancelEventArgs.cs" />
-    <Compile Include="Extensions\EditColorEventArgs.cs" />
-    <Compile Include="Extensions\GimpPaletteSerializer.cs" />
-    <Compile Include="Extensions\HslColor.cs" />
-    <Compile Include="Extensions\HsvColor.cs" />
-    <Compile Include="Extensions\HueColorSlider.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extensions\IColorEditor.cs" />
-    <Compile Include="Extensions\InterleavedBitmapPaletteSerializer.cs" />
-    <Compile Include="Extensions\IPaletteSerializer.cs" />
-    <Compile Include="Extensions\JascPaletteSerializer.cs" />
-    <Compile Include="Extensions\LightnessColorSlider.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extensions\NativeMethods.cs" />
-    <Compile Include="Extensions\NavigationOrigin.cs" />
-    <Compile Include="Extensions\PaintNetPaletteSerializer.cs" />
-    <Compile Include="Extensions\PaletteSerializer.cs" />
-    <Compile Include="Extensions\RawPaletteSerializer.cs" />
-    <Compile Include="Extensions\RgbaChannel.cs" />
-    <Compile Include="Extensions\RgbaColorSlider.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extensions\SaturationColorSlider.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Extensions\ScreenColorPicker.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="GroupBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ToolStripControllerHosts\ToolStripColorPickerDropDown.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ToolStripControllerHosts\ToolStripColorPickerSplitButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ToolStripHostDemoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ToolStripHostDemoForm.Designer.cs">
-      <DependentUpon>ToolStripHostDemoForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Extensions\ColorEditor.resx">
-      <DependentUpon>ColorEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Extensions\ColorPickerDialog.resx">
-      <DependentUpon>ColorPickerDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ToolStripControllerHosts\ToolStripColorPickerDropDown.resx">
-      <DependentUpon>ToolStripColorPickerDropDown.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ToolStripHostDemoForm.resx">
-      <DependentUpon>ToolStripHostDemoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
