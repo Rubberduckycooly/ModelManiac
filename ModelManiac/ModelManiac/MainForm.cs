@@ -23,9 +23,15 @@ namespace ModelManiac
         public RSDKv5.Model Modelv5 = new RSDKv5.Model();
         public RSDKvB.Model ModelvB = new RSDKvB.Model();
 
+        int ry = 0;
+
+        System.Timers.Timer DelayTimer = new System.Timers.Timer(1);
+
         public MainForm()
         {
             InitializeComponent();
+            DelayTimer.Elapsed += Rotate;
+            DelayTimer.Start();
         }
 
         public void New()
@@ -68,9 +74,23 @@ namespace ModelManiac
             }
         }
 
+        void Rotate(System.Object sender, System.EventArgs e)
+        {
+            //ry = ry + 1 > 0xFF ? 0 : ry + 1;
+        }
+
         public void RefreshUI()
         {
             //Draw Frame
+            switch (ModelType)
+            {
+                case 0:
+                    ModelPreviewBox.Image = Modelv5.Frames[CurFrame].AsImage(Modelv5, (int)ScaleXNUD.Value, (int)ScaleYNUD.Value, (int)ScaleZNUD.Value, RotationXBar.Value, RotationYBar.Value, RotationZBar.Value, wireFrameToolStripMenuItem.Checked);
+                    break;
+                case 1:
+                    ModelPreviewBox.Image = ModelvB.AsImage((int)ScaleXNUD.Value, (int)ScaleYNUD.Value, (int)ScaleZNUD.Value, RotationXBar.Value, RotationYBar.Value, RotationZBar.Value, wireFrameToolStripMenuItem.Checked);
+                    break;
+            }
         }
 
         public void RefreshFrameList()
@@ -79,7 +99,7 @@ namespace ModelManiac
             switch (ModelType)
             {
                 case 0:
-                    for (int i = 0; i < Modelv5.FramesCount; i++)
+                    for (int i = 0; i < Modelv5.Frames.Count; i++)
                     {
                         FramesBox.Items.Add("Frame " + (i + 1));
                     }
@@ -142,7 +162,44 @@ namespace ModelManiac
 
         private void importModelFromstlToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = ".obj Models|*obj|STL Models|*.stl|Binary STL Models|*stl";
 
+            if (dlg.ShowDialog(this) == DialogResult.OK)
+            {
+                string ext = System.IO.Path.GetFileName(dlg.FileName);
+                switch (ModelType)
+                {
+                    case 0:
+                        switch ((dlg.FilterIndex - 1))
+                        {
+                            case 0:
+                                //Load From OBJ
+                                break;
+                            case 1:
+                                //Load From STL
+                                break;
+                            case 2:
+                                //Load From STL Binary
+                                break;
+                        }
+                        break;
+                    case 1:
+                        switch ((dlg.FilterIndex - 1))
+                        {
+                            case 0:
+                                //Load From OBJ
+                                break;
+                            case 1:
+                                //Load From STL
+                                break;
+                            case 2:
+                                //Load From STL Binary
+                                break;
+                        }
+                        break;
+                }
+            }
         }
 
         private void exportToToolStripMenuItem_Click(object sender, EventArgs e)
@@ -214,5 +271,39 @@ namespace ModelManiac
             RefreshUI();
         }
 
+        private void ScaleXNUD_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshUI();
+        }
+
+        private void ScaleYNUD_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshUI();
+        }
+
+        private void RotationYBar_Scroll(object sender, EventArgs e)
+        {
+            RefreshUI();
+        }
+
+        private void RotationZBar_Scroll(object sender, EventArgs e)
+        {
+            RefreshUI();
+        }
+
+        private void WireFrameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshUI();
+        }
+
+        private void RotationXBar_Scroll(object sender, EventArgs e)
+        {
+            RefreshUI();
+        }
+
+        private void ScaleZNUD_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshUI();
+        }
     }
 }

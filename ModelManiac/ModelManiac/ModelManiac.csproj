@@ -49,6 +49,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageBoxControl\ImageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageBoxControl\ImageBoxActionSources.cs" />
+    <Compile Include="ImageBoxControl\ImageBoxBorderStyle.cs" />
+    <Compile Include="ImageBoxControl\ImageBoxCancelEventArgs.cs" />
+    <Compile Include="ImageBoxControl\ImageBoxGridDisplayMode.cs" />
+    <Compile Include="ImageBoxControl\ImageBoxGridScale.cs" />
+    <Compile Include="ImageBoxControl\ImageBoxMouseWheelMessageFilter.cs" />
+    <Compile Include="ImageBoxControl\ImageBoxNativeMethods.cs" />
+    <Compile Include="ImageBoxControl\ImageBoxSelectionMode.cs" />
+    <Compile Include="ImageBoxControl\ImageBoxSizeMode.cs" />
+    <Compile Include="ImageBoxControl\ImageBoxZoomActions.cs" />
+    <Compile Include="ImageBoxControl\ImageBoxZoomEventArgs.cs" />
+    <Compile Include="ImageBoxControl\ScrollControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageBoxControl\ScrollProperties.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageBoxControl\VirtualScrollableControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageBoxControl\ZoomLevelCollection.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
